@@ -1,4 +1,5 @@
 let headlines;
+let articles;
 
 function load() {
 	let mydata = JSON.parse(data);
