@@ -10,3 +10,5 @@ function load() {
 	console.log("ARTICLES:");
 	console.log(articles);
 }
+
+load();
