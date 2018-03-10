@@ -1,5 +1,5 @@
-# spider-monkeys
+# Spider monkeys
 Arbetsprov
 
-# Om utvecklaren
+## Om utvecklaren
 Webbutvecklare som brinner för tillgänglighet.
