@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Nyheter - Spider Monkeys</title>
+  <meta name="robots" content="noindex">
+  <title>News - Ateles</title>
 
   <!-- Bootstrap -->
   <link href="./css/main.css" rel="stylesheet">
-  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet">
   <link href="./css/spider-monkeys-bootstrap-theme.css" rel="stylesheet">
+  <script src="./data/data.json"></script>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/translations.js"></script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -18,23 +23,74 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body>
-  <div class="wrapper container">
-    <header class="page-header">
+<body onload="load()">
+  <div>
+    <header>
       <a href="/">
-        <img src="./img/ateles_logotype_mobile.svg" alt="Ateles logotyp">
+        <h1>Ateles</h1>
+        <img src="./img/ateles_logotype_mobile.svg" alt="Ateles logotype">
       </a>
+      <nav>
+        <ul>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Authors</a></li>
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </nav>
     </header>
-    <section>
-      <h1>Rubriker</h1>
-    </section>
-    <section>
-      <h1>Artiklar</h1>
-    </section>
+    <main>
+      <section>
+        <h2>Headlines</h2>
+        <ul id="headlines" class="media-list"></ul>
+        <script>
+        $(document).ready(function() {
+          headlines.forEach(headline => {
+            $("#headlines").append("<li class=\"row\" lang=\"" + headline.langCode + "\"><article><div class=\"col-md-3\"><img class=\"img-responsive\" src=\"" + headline.imageUrl + "\" alt=\"" + headline.imageAlt + "\"></div><div class=\"col-md-9\"><h3 class=\"media-heading\">"+headline.Title+"</h3><p>" + headline.Text + "</p><a href=\"\">" + eval(headline.langCode+".readMore") + headline.Title + "</a></div></article></li>");
+          });
+        });
+        </script>
+      </section>
+      <section>
+        <h2>Articles</h2>
+        <ul id="articles" class="media-list"></ul>
+        <script>
+        $(document).ready(function() {
+          articles.forEach(article => {
+            console.log("index: "+article.index+", mod: "+ article.index%3);
+            $("#articles").append("<li class=\"row\" lang=\"" + article.langCode + "\"><article><div class=\"col-md-3\"><img class=\"img-responsive\" src=\"" + article.imageUrl + "\" alt=\"" + article.imageAlt + "\"></div><div class=\"col-md-9\"><h3 class=\"media-heading\">"+article.Title+"</h3><p>" + article.Text + "</p><a href=\"\">" + eval(article.langCode+".readMore") + article.Title + "</a></div></article></li>");
+          });
+        });
+        </script>
+      </section>
+    </main>
+    <footer>
+      <nav>
+        <h2>Information</h2>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Work with us</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms and conditions</a></li>
+          <li><a href="#">Press enquiries</a></li>
+        </ul>
+        <h2>Customer service</h2>
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Ordering and payment</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#"><abbr title="Frequently asked questions">F.A.Q</abbr></a></li>
+        </ul>
+      </nav>
+      <h2>About us</h2>
+      <p>Spider monkeys are New World monkeys belonging to the genus Ateles, part of the subfamily Atelinae, family Atelidae. Like other atelines, they are found in tropical forests of Central and South America, from southern Mexico to Brazil. The genus contains seven species, all of which are under threat; the black-headed spider monkey, and brown spider monkey are critically endangered.</p>
+    </footer>
   </div>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="./js/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>
