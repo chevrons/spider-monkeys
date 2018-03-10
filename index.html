@@ -67,7 +67,7 @@
               $("#articles").append("<li class=\"row\" lang=\"" + article.langCode + "\"><article><div class=\"col-md-3\"><img class=\"img-responsive\" src=\"" + article.imageUrl + "\" alt=\"" + article.imageAlt + "\"></div><div class=\"col-md-9\"><h3 class=\"media-heading\">"+article.Title+"</h3><p>" + article.Text + "</p><a href=\"\">" + eval(article.langCode+".readMore") + article.Title + "</a></div></article></li>");
             });
           } else {
-            $("#headlines").append("<li>Articles could not be loaded. Please try again.</li>");
+            $("#articles").append("<li>Articles could not be loaded. Please try again.</li>");
           }
         });
         </script>
