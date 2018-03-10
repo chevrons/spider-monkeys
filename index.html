@@ -41,6 +41,7 @@
       </nav>
     </header>
     <main>
+      <img id="imageBase64"/>
       <section>
         <h2>Headlines</h2>
         <ul id="headlines" class="media-list"></ul>
@@ -48,7 +49,7 @@
         $(document).ready(function() {
           if (headlines !== undefined && headlines.length > 0) {
             headlines.forEach(headline => {
-              $("#headlines").append("<li class=\"row\" lang=\"" + headline.langCode + "\"><article><div class=\"col-md-3\"><img class=\"img-responsive\" src=\"" + headline.imageUrl + "\" alt=\"" + headline.imageAlt + "\"></div><div class=\"col-md-9\"><h3 class=\"media-heading\">"+headline.Title+"</h3><p>" + headline.Text + "</p><a href=\"\">" + eval(headline.langCode+".readMore") + headline.Title + "</a></div></article></li>");
+              $("#headlines").append("<li class=\"row\" lang=\"" + headline.langCode + "\"><article><div class=\"col-md-3\"><img class=\"img-responsive\" src=\"" + headline.imageUrl+ "\" alt=\"" + headline.imageAlt + "\"></div><div class=\"col-md-9\"><h3 class=\"media-heading\">"+headline.Title+"</h3><p>" + headline.Text + "</p><a href=\"\">" + eval(headline.langCode+".readMore") + headline.Title + "</a></div></article></li>");
             });
           } else {
             $("#headlines").append("<li>Headings could not be loaded. Please try again.</li>");
@@ -63,7 +64,6 @@
         $(document).ready(function() {
           if (headlines !== undefined && headlines.length > 0) {
             articles.forEach(article => {
-              console.log("index: "+article.index+", mod: "+ article.index%3);
               $("#articles").append("<li class=\"row\" lang=\"" + article.langCode + "\"><article><div class=\"col-md-3\"><img class=\"img-responsive\" src=\"" + article.imageUrl + "\" alt=\"" + article.imageAlt + "\"></div><div class=\"col-md-9\"><h3 class=\"media-heading\">"+article.Title+"</h3><p>" + article.Text + "</p><a href=\"\">" + eval(article.langCode+".readMore") + article.Title + "</a></div></article></li>");
             });
           } else {

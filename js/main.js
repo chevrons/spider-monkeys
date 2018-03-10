@@ -5,4 +5,8 @@ function load() {
 	let mydata = JSON.parse(data);
 	headlines = mydata[0].headlines;
 	articles = mydata[0].articles;
+	console.log("HEADLINES:");
+	console.log(headlines);
+	console.log("ARTICLES:");
+	console.log(articles);
 }
