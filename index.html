@@ -81,9 +81,10 @@
                                       "<div class=\"blurb-content\">" +
                                         renderImg(src, alt) +
                                         renderText(heading, paragraph) +
+                                        renderLink(link, lang, heading, 'inside') +
                                         renderFadin() +
                                       "</div>" +
-                                    renderLink(link, lang, heading) +
+                                    renderLink(link, lang, heading, 'outside') +
                                     "</article>" +
                                   "</li>";
             }
@@ -111,7 +112,7 @@
             let alt = (article.imageAlt !== undefined || article.imageAlt !== "") ? article.imageAlt : "No image description available";
             let heading = (article.title !== undefined || article.title !== "") ? article.title : "";
             let paragraph = (article.text !== undefined || article.text !== "") ? article.text : "";
-            let href = (article.url !== undefined || article.url !== "") ? article.url : "";
+            let link = (article.url !== undefined || article.url !== "") ? article.url : "";
             if (heading !== "" && paragraph !== "") {
               //articleBlurbs += (index%3 === 0) ? "<div class=\"row\">" : "";
               articleBlurbs += (index === 0) ?  "<div class=\"row\">" : "";
@@ -122,7 +123,7 @@
                                 renderText(heading, paragraph) +
                                 renderFadin() +
                               "</div>" +
-                              renderLink(href, lang, heading) +
+                              renderLink(link, lang, heading, 'outside') +
                             "</article>" +
                           "</li>";
               //articleBlurbs += (index%3 === 2) ? "</div>" : "";

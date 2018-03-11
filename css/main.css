@@ -48,6 +48,7 @@ h1.logotype {
 
 .blurb-portrait,
 .blurb-landscape {
+  background-color: #fff;
   display: block;
   margin-bottom: 20px;
 }
@@ -139,7 +140,8 @@ footer a {
     width: 60%;
   }
 
-  .blurb-landscape .blurb-fadin {
+  .blurb-landscape .blurb-fadin,
+  .blurb-landscape .blurb-link.outside {
     display: none;
   }
 
@@ -166,10 +168,14 @@ footer a {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  h2 {
+  .spider-monkeys-theme h2 {
     font-size: 2.5rem;
     margin-top: 65px;
     margin-bottom: 30px;
+  }
+
+  .blurb-image {
+    width: auto;
   }
 
   .blurb-text {
@@ -181,6 +187,18 @@ footer a {
     font-size: 1.3rem;
     margin-top: 70px;
     margin-bottom: 20px;
+  }
+
+  .blurb-portrait {
+    height: 500px;
+  }
+
+  .blurb-content {
+    height: 400px;
+  }
+
+  .blurb-link {
+    height: 100px;
   }
 
 }

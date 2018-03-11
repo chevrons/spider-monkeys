@@ -9,7 +9,7 @@ function loadData() {
 
 function renderImg(url, alt) {
 	return "<div class=\"blurb-image\">" +
-						"<img class=\"img-responsive\" src=\"" + url + "\" alt=\"" + alt + "\" height=\"100\" width=\"345\"/>" +
+						"<img class=\"img-responsive\" src=\"" + url + "\" alt=\"" + alt + "\"/>" +
 					"</div>";
 }
 
@@ -20,9 +20,9 @@ function renderText(title, text) {
 					"</div>";
 }
 
-function renderLink(href, lang, text) {
+function renderLink(href, lang, text, className) {
 	let link = "<a href=\"" + href + "\">" + eval(lang+".readMore") + text + "</a>";
-	return (href !== undefined || href !== "") ? "<div  class=\"blurb-link\">" + link + "</div>" : "";
+	return (href !== undefined || href !== "") ? "<div  class=\"blurb-link " + className + "\">" + link + "</div>" : "";
 }
 
 function renderFadin() {
