@@ -15,6 +15,7 @@ $(document).ready(function() {
       headlines.forEach(function(headline) {
         let lang = (headline.langCode !== undefined && headline.langCode !== "") ? headline.langCode : "en";
         let src = (headline.imageUrl !== undefined && headline.imageUrl !== "") ? headline.imageUrl : "./img/image-not-found.png";
+        //let image = (headline.imageUrl !== undefined && headline.imageUrl !== "") ? fetchImage(headline.imageUrl) : "";
         let alt = (headline.imageAlt !== undefined && headline.imageAlt !== "") ? headline.imageAlt : "No image description available";
         let heading = (headline.title !== undefined) ? headline.title : "";
         let paragraph = (headline.text !== undefined) ? headline.text : "";
@@ -63,7 +64,6 @@ if (articles !== undefined) {
                         renderLink(link, lang, heading, 'outside') +
                       "</article>" +
                     "</li>";
-        //articleBlurbs += (index%3 === 2) ? "</div>" : "";
         articleBlurbs += (index === articles.length-1) ? "</div>" : "";
       }
     });

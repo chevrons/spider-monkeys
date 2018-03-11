@@ -11,17 +11,18 @@ Webbutvecklare som brinner för tillgänglighet.
 * Hard coded news data &check;
 * Reusable modules/elements using DRY &check;
 * Semantic HTML(5) & CSS(3)  &check;
-* Responsive:
-* * when minimizing the browser window, there's a moment where the width of the browser is under the breakpoint for x-small devices but the image is not large enough to fill out the width, so there's a white pane to the right of the image.
+* Responsive &check;
 * Crossbrowser support:
-* * Chrome: v. 64.0.3282.186 (Official Build) (64-bit) &check;
-* * Internet Explorer, v. 11 &check;
+  * Chrome: v. 64.0.3282.186 (Official Build) (64-bit) &check;
+  * Internet Explorer, v. 11 &check;
+  * Firefox, v. 47.0.2 &check;
+  * Safari on iphone 8 &check;
 
 ### Nice-to-have
 * Loading data from json-file  &check;
 * Possibility to have 0-N headlines and articles &check;
 * Making the site independent of the json structure (new elements or removing some) &cross;
-  * No error handling of corrupt image sources
+  * No error handling of corrupt image sources.
 
 ### Rules
 * Make smart decisions about the json objects and UI elements
@@ -70,3 +71,8 @@ Jag lät brödtexterna i puffarna vara svarta för bättre läsbarhet. Här var 
 Gjorde länkarna understrukna för att även färgblinda ska kunna se att det är klickbar text. Speciellt nu när de har samma färg som rubrikerna.
 
 Försökte även skriva tydligare länkar: https://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-refs
+
+### Övrigt
+Förbättringar som hade kunnat göras om mer tid funnits:
+* Bättre bildhantering (skalning och beskärning så tumnaglarna var små och snabba att ladda)
+* Lazy-loading av bilderna
