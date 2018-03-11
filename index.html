@@ -26,21 +26,37 @@
 <body class="spider-monkeys-theme">
   <header class="page-header">
     <div class="container">
-      <div class="pull-left">
-        <a href="/spider-monkeys/">
-          <h1 class="logotype">Ateles</h1>
-        </a>
+      <div class="row">
+        <div class="vertical-align">
+        <div class="col-xs-6 col-sm-3">
+          <a href="/spider-monkeys/">
+            <h1 class="logotype">Ateles</h1>
+          </a>
+        </div>
+        <div class="col-xs-6 col-sm-1">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuItems" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="pull-right">
-        <nav>
-          <ul class="nav nav-pills">
-            <li><a href="#">News</a></li>
-            <li><a href="#">Authors</a></li>
-            <li><a href="#">Explore</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact us</a></li>
-          </ul>
-        </nav>
+        <div class="col-xs-12 col-sm-8">
+          <div class="pull-right collapse navbar-collapse" id="menuItems">
+            <nav>
+              <ul class="nav nav-pills">
+                <li><a href="#">News</a></li>
+                <li><a href="#">Authors</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -58,20 +74,18 @@
             let alt = (headline.imageAlt !== undefined || headline.imageAlt !== "") ? headline.imageAlt : "No image description available";
             let heading = (headline.title !== undefined || headline.title !== "") ? headline.title : "";
             let paragraph = (headline.text !== undefined || headline.text !== "") ? headline.text : "";
-            let href = (headline.url !== undefined || headline.url !== "") ? headline.url : "#";
+            let link = (headline.url !== undefined || headline.url !== "") ? headline.url : "";
             if (heading !== "" && paragraph !== "") {
-              headlinesBlurbs += "<li lang=\"" + headline.langCode + "\">" +
-                            "<article class=\"row blurb-landscape\">" +
-                              "<div class=\"blurb-image col-md-3\">" +
-                                "<img class=\"img-responsive\" src=\"" + headline.imageUrl+ "\" alt=\"" + headline.imageAlt + "\">" +
-                              "</div>" +
-                              "<div class=\"blurb-content col-md-9\">" +
-                                "<h3>"+headline.title+"</h3>" +
-                                "<p>" + headline.text + "</p>" +
-                                "<a href=\"#\">" + eval(headline.langCode+".readMore") + headline.title + "</a>" +
-                              "</div>" +
-                            "</article>" +
-                          "</li>";
+              headlinesBlurbs += "<li lang=\"" + lang + "\">" +
+                                    "<article class=\"blurb-portrait\">" +
+                                      "<div class=\"blurb-content\">" +
+                                        renderImg(src, alt) +
+                                        renderText(heading, paragraph) +
+                                        renderFadin() +
+                                      "</div>" +
+                                    renderLink(link, lang, heading) +
+                                    "</article>" +
+                                  "</li>";
             }
           });
         } else {
@@ -97,19 +111,17 @@
             let alt = (article.imageAlt !== undefined || article.imageAlt !== "") ? article.imageAlt : "No image description available";
             let heading = (article.title !== undefined || article.title !== "") ? article.title : "";
             let paragraph = (article.text !== undefined || article.text !== "") ? article.text : "";
-            let href = (article.url !== undefined || article.url !== "") ? article.url : "#";
+            let href = (article.url !== undefined || article.url !== "") ? article.url : "";
             if (heading !== "" && paragraph !== "") {
               articleBlurbs += (index%3 === 0) ? "<div class=\"row\">" : "";
               articleBlurbs += "<li lang=\"" + lang + "\" class=\"col-md-4\">" +
                             "<article class=\"blurb-portrait\">" +
-                              "<div class=\"blurb-image\">" +
-                                "<img class=\"img-responsive\" src=\"" + src + "\" alt=\"" + alt + "\">" +
-                              "</div>" +
                               "<div class=\"blurb-content\">" +
-                                "<h3>"+ heading +"</h3>" +
-                                "<p>" + paragraph + "</p>" +
-                                "<a href=\"" + href + "\">" + eval(article.langCode+".readMore") + heading + "</a>" +
+                                renderImg(src, alt) +
+                                renderText(heading, paragraph) +
+                                renderFadin() +
                               "</div>" +
+                              renderLink(href, lang, heading) +
                             "</article>" +
                           "</li>";
               articleBlurbs += (index%3 === 2) ? "</div>" : "";

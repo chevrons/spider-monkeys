@@ -1,53 +1,104 @@
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
 body.spider-monkeys-theme {
   background-color: #EBF1F5;
 }
 
-.wrapper {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-header nav {
-  margin-top: 14px;
-}
-
-.logotype {
-  font-family: serif;
-  color: transparent;
+h1.logotype {
   background-image: url('../img/ateles_logotype_mobile.svg');
   background-repeat: no-repeat;
+  color: transparent;
+  font-family: serif;
+  line-height: 2rem;
+  margin: 6px 0 0 0;
   width: 150px;
+}
+
+.spider-monkeys-theme a {
+    text-decoration: underline;
+}
+
+.spider-monkeys-theme .page-header {
+  background-color: #0475D7;
+  margin: 0;
+  padding: 15px 0;
+}
+
+.spider-monkeys-theme h2 {
+    color: #006AC7;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.spider-monkeys-theme footer h2 {
+  color: #fff;
+  font-size: 1.3rem;
+  /*
+  margin-top: 70px;
+  margin-bottom: 20px;
+  */
+}
+
+.spider-monkeys-theme h3 {
+  color: #0475D7;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 .blurb-landscape,
 .blurb-portrait {
   display: block;
-  background-color: #fff;
   margin-bottom: 10px;
 }
 
-.col-md-3.blurb-image {
-  padding: 0;
+.blurb-image {
+    max-height: 200px;
+    overflow: hidden;
 }
 
-.blurb-content,
-.col-md-9.blurb-content {
-    padding: 30px 50px;
+.blurb-text {
+    background-color: #fff;
 }
 
-.blurb-content a {
+.blurb-link {
+  background-color: #fff;
+  padding: 15px 30px;
+}
+
+.blurb-link a {
   color: #0475D7;
   text-decoration: underline;
 }
 
 .blurb-portrait h3 {
   font-size: 1.3rem;
+  margin-top: 5px;
   margin-bottom: 15px;
 }
 
-.blurb-portrait .blurb-content {
-  padding: 20px 40px;
+.blurb-portrait .blurb-text {
+  padding: 15px 30px;
+}
+
+.vertical-align {
+  align-items: center;
+  display: flex;
+}
+
+.blurb-content {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.blurb-fadin {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background:-webkit-linear-gradient(rgba( 255, 255, 255, 0), rgba(255, 255, 255, 1) ); /* For Safari */
+  background:linear-gradient( rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) );
 }
 
 footer {
@@ -58,4 +109,37 @@ footer {
 footer h2,
 footer a {
   color: #fff;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .vertical-align {
+    display: inline;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 2.5rem;
+    margin-top: 65px;
+    margin-bottom: 30px;
+  }
+
+  .blurb-text {
+      padding: 30px 50px;
+  }
+
+  .spider-monkeys-theme footer h2 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+
 }
