@@ -1,2 +1,39 @@
+html {
+  font-size: 1em;
+}
 .page-header {
+  background-color: #0475D7;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.nav a {
+  color: #fff;
+}
+
+h2 {
+  color: #006AC7;
+  font-size: 2.5rem;
+  margin-top: 65px;
+  margin-bottom: 30px;
+}
+
+footer h2 {
+  font-size: 1.3rem;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #0475D7;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.spider-monkeys-theme footer .nav > li > a {
+  padding: 2px;
+}
+
+.spider-monkeys-theme footer .nav-pills > li > a {
+  border-radius: 0;
 }

@@ -1,7 +1,7 @@
 sv = {
-  readMore: "Läs hela artikeln "
+  readMore: "Läs artikeln "
 }
 
 en = {
-  readMore: "Read the whole article "
+  readMore: "Read the article "
 }

@@ -3,3 +3,43 @@ Arbetsprov
 
 ## Om utvecklaren
 Webbutvecklare som brinner för tillgänglighet.
+
+## Kommentarer
+Jag valde att inte använda SASS/LESS, som inte tillför så mycket när man jobbar med mindre projekt (som ett arbetsprov).
+
+Jag ville inte lägga tid på att installera t.ex. React, så jag bestämde mig för att köra vanilla javascript, men hade föredragit att ha HTML i dokumentet för att få bättre översikt över HTML-strukturen samt kunna köra automattester att de komponenter som renderas är tillgängliga. En snabb genomkörning med NVDA fungerade dock bra och Chrome audit gav 100% på tillgänglighet så jag får nöja mig med det.
+
+Jag valde att sätta grundstorleken på text till 1em för att användare med synnedsättningar ska kunna nyttja webbläsarens funktion för att öka fontstorleken.
+
+För att få fyrkantiga tumnaglar behöver man göra skalningar och croppningar av bilderna som hämtas. Detta hade jag inte högst upp på min prioritetslista.
+
+För att öka prestandan behöver bilderna skalas om till mindre bilder som går fort att ladda ner.
+
+## Förändringar mot specifikationen
+
+### Användbarhets- och tillgänglighetsanpassningar
+#### Alt-texter till bilderna
+För att bilder ska kunna läsas upp av skärmläsare är det viktigt att lägga till beskrivning av bilder i alt-attributet på bilder. Jag adderade därför den informationen i json-filen (imageAlt) för samtliga bilder.
+
+#### Olika språk
+För att användare med synnedsättning ska kunna få informationen uppläst korrekt med hjälp av skärmläsare lade jag till språk i json-filen, eftersom alla artiklar inte var på engelska. På det sättet kan skärmläsaren detektera vilket språk artikeln ska läsas på.
+
+#### Versaler
+* Länkarna i toppmenyn är ändrade från versaler till gemener för att öka läsbarheten.
+
+### Övrigt
+#### Rubriker saknades
+Artiklarna i json-filen saknade rubriker, så jag googlade på texten för att få fram rubriker, som jag lade till i json-datat.
+
+#### Texten "Om oss"
+Jag ändrade texten under "About us" i sidfoten för jag tyckte den som fanns i skissen var lite tråkig.
+
+#### Färgkontraster
+Jag mörkade rubrikernas samt sidhuvudet och sidfotens färger för att möta upp tillgänglighetskraven på kontraster (WCAG 2.0 AA).
+
+Jag lät brödtexterna i puffarna vara svarta för bättre läsbarhet. Här var jag inte helt säker på att textfärgen ingick i designen eller bara skulle ses som en "mall".
+
+#### Länkar
+Gjorde länkarna understrukna för att även färgblinda ska kunna se att det är klickbar text. Speciellt nu när de har samma färg som rubrikerna.
+
+Försökte även skriva tydligare länkar: https://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-refs
