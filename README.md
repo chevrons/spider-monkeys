@@ -44,6 +44,14 @@ Jag valde att sätta grundstorleken på text till 1rem för att användare med s
 
 För att få fyrkantiga tumnaglar som går snabbt att ladda behöver man göra skalningar och croppningar av bilderna som hämtas.
 
+### Förbättringsförslag
+Vad jag hade velat göra om jag hunnit:
+* Bättre bildhantering (skalning och beskärning så tumnaglarna var små och snabba att ladda)
+* Lazy-loading av bilderna
+* Asynkron hantering med AJAX
+* Fixat så all text var synlig även vid val av större textstorlek i webbläsaren.
+* Säkert en massa andra små detaljer.
+
 ## Förändringar mot specifikationen
 
 ### Användbarhets- och tillgänglighetsanpassningar
@@ -72,10 +80,3 @@ Jag lät brödtexterna i puffarna vara svarta för bättre läsbarhet. Här var 
 Gjorde länkarna understrukna för att även färgblinda ska kunna se att det är klickbar text. Speciellt nu när de har samma färg som rubrikerna.
 
 Försökte även skriva tydligare länkar: https://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-refs
-
-### Övrigt
-Förbättringar som hade kunnat göras om mer tid funnits:
-* Bättre bildhantering (skalning och beskärning så tumnaglarna var små och snabba att ladda)
-* Lazy-loading av bilderna
-* Asynkron hantering med AJAX
-* Fixat så all text var synlig även vid val av större textstorlek i webbläsaren.
