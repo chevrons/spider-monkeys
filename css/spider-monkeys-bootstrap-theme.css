@@ -1,33 +1,9 @@
 html {
   font-size: 1em;
 }
-.page-header {
-  background-color: #0475D7;
-  margin: 0;
-  padding-bottom: 0;
-}
 
 .nav a {
   color: #fff;
-}
-
-h2 {
-  color: #006AC7;
-  font-size: 2.5rem;
-  margin-top: 65px;
-  margin-bottom: 30px;
-}
-
-footer h2 {
-  font-size: 1.3rem;
-  margin-top: 70px;
-  margin-bottom: 20px;
-}
-
-h3 {
-  color: #0475D7;
-  font-weight: bold;
-  font-size: 2rem;
 }
 
 .spider-monkeys-theme footer .nav > li > a {
@@ -36,4 +12,18 @@ h3 {
 
 .spider-monkeys-theme footer .nav-pills > li > a {
   border-radius: 0;
+}
+
+.spider-monkeys-theme .navbar-toggle {
+  margin: 0;
+}
+.spider-monkeys-theme .navbar-toggle .icon-bar {
+  background-color: #fff;
+  border-radius: 2px;
+  height: 4px;
+  width: 30px;
+}
+
+.spider-monkeys-theme .navbar-collapse {
+  padding: 0;
 }
