@@ -7,12 +7,15 @@ Webbutvecklare som brinner för tillgänglighet.
 ## Requirements
 
 ### Must-have
-* HTML5 solution according to given designs
+* HTML5 solution according to given designs &check;
 * Hard coded news data &check;
-* Reusable modules/elements using DRY
+* Reusable modules/elements using DRY (&check;)
 * Semantic HTML(5) & CSS(3)  &check;
-* Responsive
-* Crossbrowser support
+* Responsive:
+* * when minimizing the browser window, there's a moment where the width of the browser is under the breakpoint for x-small devices but the image is not large enough to fill out the width, so there's a white pane to the right of the image.
+* Crossbrowser support:
+* * Chrome: v. 64.0.3282.186 (Official Build) (64-bit) &check;
+* * Internet Explorer, v. 11 &check;
 
 ### Nice-to-have
 * Loading data from json-file  &check;
