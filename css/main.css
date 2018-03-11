@@ -1,5 +1,5 @@
-body {
-  margin: 0;
+body.spider-monkeys-theme {
+  background-color: #EBF1F5;
 }
 
 .wrapper {
@@ -8,7 +8,54 @@ body {
   margin-left: auto;
 }
 
-@media (min-width: 1200px)
-.wrapper {
-    max-width: 1230px;
+header nav {
+  margin-top: 14px;
+}
+
+.logotype {
+  font-family: serif;
+  color: transparent;
+  background-image: url('../img/ateles_logotype_mobile.svg');
+  background-repeat: no-repeat;
+  width: 150px;
+}
+
+.blurb-landscape,
+.blurb-portrait {
+  display: block;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.col-md-3.blurb-image {
+  padding: 0;
+}
+
+.blurb-content,
+.col-md-9.blurb-content {
+    padding: 30px 50px;
+}
+
+.blurb-content a {
+  color: #0475D7;
+  text-decoration: underline;
+}
+
+.blurb-portrait h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.blurb-portrait .blurb-content {
+  padding: 20px 40px;
+}
+
+footer {
+  color: #fff;
+  background-color: #0475D7;
+}
+
+footer h2,
+footer a {
+  color: #fff;
 }

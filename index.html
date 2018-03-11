@@ -23,78 +23,143 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body>
-  <div>
-    <header>
-      <a href="/">
-        <h1>Ateles</h1>
-        <img src="./img/ateles_logotype_mobile.svg" alt="Ateles logotype">
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Authors</a></li>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Contact us</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section>
-        <h2>Headlines</h2>
-        <ul id="headlines" class="media-list"></ul>
-        <script>
-        $(document).ready(function() {
-          if (headlines !== undefined && headlines.length > 0) {
-            headlines.forEach(headline => {
-              $("#headlines").append("<li class=\"row\" lang=\"" + headline.langCode + "\"><article><div class=\"col-md-3\"><img class=\"img-responsive\" src=\"" + headline.imageUrl+ "\" alt=\"" + headline.imageAlt + "\"></div><div class=\"col-md-9\"><h3 class=\"media-heading\">"+headline.Title+"</h3><p>" + headline.Text + "</p><a href=\"\">" + eval(headline.langCode+".readMore") + headline.Title + "</a></div></article></li>");
-            });
-          } else {
-            $("#headlines").append("<li>Headings could not be loaded. Please try again.</li>");
-          }
-        });
-        </script>
-      </section>
-      <section>
-        <h2>Articles</h2>
-        <ul id="articles" class="media-list"></ul>
-        <script>
-        $(document).ready(function() {
-          if (headlines !== undefined && headlines.length > 0) {
-            articles.forEach(article => {
-              $("#articles").append("<li class=\"row\" lang=\"" + article.langCode + "\"><article><div class=\"col-md-3\"><img class=\"img-responsive\" src=\"" + article.imageUrl + "\" alt=\"" + article.imageAlt + "\"></div><div class=\"col-md-9\"><h3 class=\"media-heading\">"+article.Title+"</h3><p>" + article.Text + "</p><a href=\"\">" + eval(article.langCode+".readMore") + article.Title + "</a></div></article></li>");
-            });
-          } else {
-            $("#articles").append("<li>Articles could not be loaded. Please try again.</li>");
-          }
-        });
-        </script>
-      </section>
-    </main>
-    <footer>
-      <nav>
-        <h2>Information</h2>
-        <ul>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Work with us</a></li>
-          <li><a href="#">Privacy policy</a></li>
-          <li><a href="#">Terms and conditions</a></li>
-          <li><a href="#">Press enquiries</a></li>
-        </ul>
-        <h2>Customer service</h2>
-        <ul>
-          <li><a href="#">Contact us</a></li>
-          <li><a href="#">Ordering and payment</a></li>
-          <li><a href="#">Shipping</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#"><abbr title="Frequently asked questions">F.A.Q</abbr></a></li>
-        </ul>
-      </nav>
-      <h2>About us</h2>
-      <p>Spider monkeys are New World monkeys belonging to the genus Ateles, part of the subfamily Atelinae, family Atelidae. Like other atelines, they are found in tropical forests of Central and South America, from southern Mexico to Brazil. The genus contains seven species, all of which are under threat; the black-headed spider monkey, and brown spider monkey are critically endangered.</p>
-    </footer>
-  </div>
+<body class="spider-monkeys-theme">
+  <header class="page-header">
+    <div class="container">
+      <div class="pull-left">
+        <a href="/spider-monkeys/">
+          <h1 class="logotype">Ateles</h1>
+        </a>
+      </div>
+      <div class="pull-right">
+        <nav>
+          <ul class="nav nav-pills">
+            <li><a href="#">News</a></li>
+            <li><a href="#">Authors</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <section>
+      <h2>Headlines</h2>
+      <ul id="headlines" class="media-list"></ul>
+      <script>
+      $(document).ready(function() {
+        let headlinesBlurbs = "<li></li>";
+        if (headlines !== undefined && headlines.length > 0) {
+          headlines.forEach(function(headline) {
+            let lang = (headline.langCode !== undefined || headline.langCode !== "") ? headline.langCode : "en";
+            let src = (headline.imageUrl !== undefined || headline.imageUrl !== "") ? headline.imageUrl : "./img/image-not-found.png";
+            let alt = (headline.imageAlt !== undefined || headline.imageAlt !== "") ? headline.imageAlt : "No image description available";
+            let heading = (headline.title !== undefined || headline.title !== "") ? headline.title : "";
+            let paragraph = (headline.text !== undefined || headline.text !== "") ? headline.text : "";
+            let href = (headline.url !== undefined || headline.url !== "") ? headline.url : "#";
+            if (heading !== "" && paragraph !== "") {
+              headlinesBlurbs += "<li lang=\"" + headline.langCode + "\">" +
+                            "<article class=\"row blurb-landscape\">" +
+                              "<div class=\"blurb-image col-md-3\">" +
+                                "<img class=\"img-responsive\" src=\"" + headline.imageUrl+ "\" alt=\"" + headline.imageAlt + "\">" +
+                              "</div>" +
+                              "<div class=\"blurb-content col-md-9\">" +
+                                "<h3>"+headline.title+"</h3>" +
+                                "<p>" + headline.text + "</p>" +
+                                "<a href=\"#\">" + eval(headline.langCode+".readMore") + headline.title + "</a>" +
+                              "</div>" +
+                            "</article>" +
+                          "</li>";
+            }
+          });
+        } else {
+          headlinesBlurbs = "<li>Headings could not be loaded. Please try again by reloading the page. If the problem persists, call our support.</li>";
+        }
+        $("#headlines").append(headlinesBlurbs);
+      });
+      </script>
+      <noscript>
+        You need to enable javascript in your web browser in order to see this content.
+      </noscript>
+    </section>
+    <section>
+      <h2>Articles</h2>
+      <ul id="articles" class="media-list"></ul>
+      <script>
+      $(document).ready(function() {
+        let articleBlurbs = "<li></li>";
+        if (articles !== undefined && articles.length > 0) {
+          articles.forEach(function(article, index) {
+            let lang = (article.langCode !== undefined || article.langCode !== "") ? article.langCode : "en";
+            let src = (article.imageUrl !== undefined || article.imageUrl !== "") ? article.imageUrl : "./img/image-not-found.png";
+            let alt = (article.imageAlt !== undefined || article.imageAlt !== "") ? article.imageAlt : "No image description available";
+            let heading = (article.title !== undefined || article.title !== "") ? article.title : "";
+            let paragraph = (article.text !== undefined || article.text !== "") ? article.text : "";
+            let href = (article.url !== undefined || article.url !== "") ? article.url : "#";
+            if (heading !== "" && paragraph !== "") {
+              articleBlurbs += (index%3 === 0) ? "<div class=\"row\">" : "";
+              articleBlurbs += "<li lang=\"" + lang + "\" class=\"col-md-4\">" +
+                            "<article class=\"blurb-portrait\">" +
+                              "<div class=\"blurb-image\">" +
+                                "<img class=\"img-responsive\" src=\"" + src + "\" alt=\"" + alt + "\">" +
+                              "</div>" +
+                              "<div class=\"blurb-content\">" +
+                                "<h3>"+ heading +"</h3>" +
+                                "<p>" + paragraph + "</p>" +
+                                "<a href=\"" + href + "\">" + eval(article.langCode+".readMore") + heading + "</a>" +
+                              "</div>" +
+                            "</article>" +
+                          "</li>";
+              articleBlurbs += (index%3 === 2) ? "</div>" : "";
+            }
+          });
+        } else {
+          articleBlurbs = "<li>Articles could not be loaded. Please try again by reloading the page. If the problem persists, call our support.</li>";
+        }
+        $("#articles").append(articleBlurbs);
+      });
+      </script>
+      <noscript>
+        You need to enable javascript in your web browser in order to see this content.
+      </noscript>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <nav class="col-md-5">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Information</h2>
+              <ul class="nav nav-pills nav-stacked">
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Work with us</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Terms and conditions</a></li>
+                <li><a href="#">Press enquiries</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h2>Customer service</h2>
+              <ul class="nav nav-pills nav-stacked">
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Ordering and payment</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#"><abbr title="Frequently asked questions">F.A.Q</abbr></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="col-md-offset-2 col-md-5">
+          <h2>About us</h2>
+          <p>Spider monkeys are New World monkeys belonging to the genus Ateles, part of the subfamily Atelinae, family Atelidae. Like other atelines, they are found in tropical forests of Central and South America, from southern Mexico to Brazil. The genus contains seven species, all of which are under threat; the black-headed spider monkey, and brown spider monkey are critically endangered.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
