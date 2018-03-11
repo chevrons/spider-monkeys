@@ -18,7 +18,12 @@ h1.logotype {
   width: 150px;
 }
 
+.spider-monkeys-theme p {
+  font-size: 1rem;
+}
+
 .spider-monkeys-theme a {
+    font-size: 1rem;
     text-decoration: underline;
 }
 

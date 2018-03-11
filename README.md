@@ -35,13 +35,11 @@ Webbutvecklare som brinner för tillgänglighet.
 ## Kommentarer
 Jag valde att inte använda SASS/LESS, som inte tillför så mycket när man jobbar med mindre projekt (som ett arbetsprov).
 
-Jag ville inte lägga tid på att installera t.ex. React, så jag bestämde mig för att köra vanilla javascript, men hade föredragit att ha HTML i dokumentet för att få bättre översikt över HTML-strukturen samt kunna köra automattester att de komponenter som renderas är tillgängliga. En snabb genomkörning med NVDA fungerade dock bra och Chrome audit gav 100% på tillgänglighet så jag får nöja mig med det.
+Jag ville inte lägga tid på att installera t.ex. React, så jag bestämde mig för att köra vanilla javascript, men hade föredragit att ha HTML i dokumentet för att få bättre översikt över HTML-strukturen samt kunna köra automattester att de komponenter som renderas är tillgängliga. Snabbtest med NVDA fungerade och Chrome audit gav 100% på tillgänglighet, även om det fanns en par detaljer kvar.
 
-Jag valde att sätta grundstorleken på text till 1em för att användare med synnedsättningar ska kunna nyttja webbläsarens funktion för att öka fontstorleken.
+Jag valde att sätta grundstorleken på text till 1rem för att användare med synnedsättningar ska kunna nyttja webbläsarens funktion för att öka fontstorleken. Tyvärr gömdes texten då man valde den största storleken. Puffarnas höjd måste bli mer flexibel.
 
-För att få fyrkantiga tumnaglar behöver man göra skalningar och croppningar av bilderna som hämtas. Detta hade jag inte högst upp på min prioritetslista.
-
-För att öka prestandan behöver bilderna skalas om till mindre bilder som går fort att ladda ner.
+För att få fyrkantiga tumnaglar som går snabbt att ladda behöver man göra skalningar och croppningar av bilderna som hämtas.
 
 ## Förändringar mot specifikationen
 
