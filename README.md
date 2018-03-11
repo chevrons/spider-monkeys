@@ -78,3 +78,4 @@ Förbättringar som hade kunnat göras om mer tid funnits:
 * Bättre bildhantering (skalning och beskärning så tumnaglarna var små och snabba att ladda)
 * Lazy-loading av bilderna
 * Asynkron hantering med AJAX
+* Fixat så all text var synlig även vid val av större textstorlek i webbläsaren.
