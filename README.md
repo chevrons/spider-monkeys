@@ -4,6 +4,29 @@ Arbetsprov
 ## Om utvecklaren
 Webbutvecklare som brinner för tillgänglighet.
 
+## Requirements
+
+### Must-have
+* HTML5 solution according to given designs
+* Hard coded news data &check;
+* Reusable modules/elements using DRY
+* Semantic HTML(5) & CSS(3)  &check;
+* Responsive
+* Crossbrowser support
+
+### Nice-to-have
+* Loading data from json-file  &check;
+* Possibility to have 0-N headlines and articles
+* Making the site independent och the json structure (new elements or removing some)
+
+### Rules
+* Make smart decisions about the json objects and UI elements
+* Use any javascript library
+* Experiment by changing the json file
+* Redesign the UI if you need
+* Use automation if you want to
+* Motivate your choices
+
 ## Kommentarer
 Jag valde att inte använda SASS/LESS, som inte tillför så mycket när man jobbar med mindre projekt (som ett arbetsprov).
 
@@ -25,7 +48,7 @@ För att bilder ska kunna läsas upp av skärmläsare är det viktigt att lägga
 För att användare med synnedsättning ska kunna få informationen uppläst korrekt med hjälp av skärmläsare lade jag till språk i json-filen, eftersom alla artiklar inte var på engelska. På det sättet kan skärmläsaren detektera vilket språk artikeln ska läsas på.
 
 #### Versaler
-* Länkarna i toppmenyn är ändrade från versaler till gemener för att öka läsbarheten.
+Länkarna i toppmenyn är ändrade från versaler till gemener för att öka läsbarheten.
 
 ### Övrigt
 #### Rubriker saknades
