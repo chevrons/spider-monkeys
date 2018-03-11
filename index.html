@@ -77,7 +77,7 @@
             let link = (headline.url !== undefined || headline.url !== "") ? headline.url : "";
             if (heading !== "" && paragraph !== "") {
               headlinesBlurbs += "<li lang=\"" + lang + "\">" +
-                                    "<article class=\"blurb-portrait\">" +
+                                    "<article class=\"blurb-landscape\">" +
                                       "<div class=\"blurb-content\">" +
                                         renderImg(src, alt) +
                                         renderText(heading, paragraph) +
@@ -113,8 +113,9 @@
             let paragraph = (article.text !== undefined || article.text !== "") ? article.text : "";
             let href = (article.url !== undefined || article.url !== "") ? article.url : "";
             if (heading !== "" && paragraph !== "") {
-              articleBlurbs += (index%3 === 0) ? "<div class=\"row\">" : "";
-              articleBlurbs += "<li lang=\"" + lang + "\" class=\"col-md-4\">" +
+              //articleBlurbs += (index%3 === 0) ? "<div class=\"row\">" : "";
+              articleBlurbs += (index === 0) ?  "<div class=\"row\">" : "";
+              articleBlurbs += "<li lang=\"" + lang + "\" class=\"col-sm-6 col-md-4\">" +
                             "<article class=\"blurb-portrait\">" +
                               "<div class=\"blurb-content\">" +
                                 renderImg(src, alt) +
@@ -124,7 +125,8 @@
                               renderLink(href, lang, heading) +
                             "</article>" +
                           "</li>";
-              articleBlurbs += (index%3 === 2) ? "</div>" : "";
+              //articleBlurbs += (index%3 === 2) ? "</div>" : "";
+              articleBlurbs += (index === articles.length-1) ? "</div>" : "";
             }
           });
         } else {
@@ -141,9 +143,9 @@
   <footer>
     <div class="container">
       <div class="row">
-        <nav class="col-md-5">
+        <nav class="col-sm-7 col-md-5">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-sm-6 col-md-6">
               <h2>Information</h2>
               <ul class="nav nav-pills nav-stacked">
                 <li><a href="#">About us</a></li>
@@ -153,7 +155,7 @@
                 <li><a href="#">Press enquiries</a></li>
               </ul>
             </div>
-            <div class="col-md-6">
+            <div class="col-sm-6 col-md-6">
               <h2>Customer service</h2>
               <ul class="nav nav-pills nav-stacked">
                 <li><a href="#">Contact us</a></li>
@@ -165,7 +167,7 @@
             </div>
           </div>
         </nav>
-        <div class="col-md-offset-2 col-md-5">
+        <div class="col-sm-5 col-md-offset-2 col-md-5">
           <h2>About us</h2>
           <p>Spider monkeys are New World monkeys belonging to the genus Ateles, part of the subfamily Atelinae, family Atelidae. Like other atelines, they are found in tropical forests of Central and South America, from southern Mexico to Brazil. The genus contains seven species, all of which are under threat; the black-headed spider monkey, and brown spider monkey are critically endangered.</p>
         </div>

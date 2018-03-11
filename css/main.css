@@ -46,10 +46,10 @@ h1.logotype {
   font-size: 2rem;
 }
 
-.blurb-landscape,
-.blurb-portrait {
+.blurb-portrait,
+.blurb-landscape {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .blurb-image {
@@ -71,13 +71,15 @@ h1.logotype {
   text-decoration: underline;
 }
 
-.blurb-portrait h3 {
+.blurb-portrait h3,
+.blurb-landscape h3 {
   font-size: 1.3rem;
   margin-top: 5px;
   margin-bottom: 15px;
 }
 
-.blurb-portrait .blurb-text {
+.blurb-portrait .blurb-text,
+.blurb-landscape .blurb-text {
   padding: 15px 30px;
 }
 
@@ -116,11 +118,50 @@ footer a {
   .vertical-align {
     display: inline;
   }
+
+  .blurb-landscape {
+    background-color: #fff;
+  }
+
+  .blurb-landscape .blurb-content {
+      height: 100%;
+      overflow: auto;
+  }
+
+  .blurb-landscape .blurb-image {
+    float: left;
+    width: 40%;
+    max-height: 100%;
+  }
+
+  .blurb-landscape .blurb-text {
+    float: left;
+    width: 60%;
+  }
+
+  .blurb-landscape .blurb-fadin {
+    display: none;
+  }
+
+  .blurb-landscape .blurb-link {
+    width: 60%;
+    margin-left: 40%;
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  .blurb-portrait {
+    height: 450px;
+  }
 
+  .blurb-content {
+    height: 350px;
+  }
+
+  .blurb-link {
+    height: 100px;
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
