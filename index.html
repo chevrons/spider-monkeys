@@ -10,7 +10,7 @@
 
   <!-- Bootstrap -->
   <link href="./css/main.css" rel="stylesheet">
-  <link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="./css/spider-monkeys-bootstrap-theme.css" rel="stylesheet">
   <script src="./data/data.json"></script>
   <script src="./js/jquery-3.3.1.min.js"></script>
@@ -61,84 +61,16 @@
     </div>
   </header>
   <main class="container">
-    <section>
+    <div id="errorMessages" class="alert alert-danger">
+      <noscript>You need to enable javascript in your web browser in order to see this content.</noscript>
+    </div>
+    <section id="headlines" style="display: none;">
       <h2>Headlines</h2>
-      <ul id="headlines" class="media-list"></ul>
-      <script>
-      $(document).ready(function() {
-        let headlinesBlurbs = "<li></li>";
-        if (headlines !== undefined && headlines.length > 0) {
-          headlines.forEach(function(headline) {
-            let lang = (headline.langCode !== undefined || headline.langCode !== "") ? headline.langCode : "en";
-            let src = (headline.imageUrl !== undefined || headline.imageUrl !== "") ? headline.imageUrl : "./img/image-not-found.png";
-            let alt = (headline.imageAlt !== undefined || headline.imageAlt !== "") ? headline.imageAlt : "No image description available";
-            let heading = (headline.title !== undefined || headline.title !== "") ? headline.title : "";
-            let paragraph = (headline.text !== undefined || headline.text !== "") ? headline.text : "";
-            let link = (headline.url !== undefined || headline.url !== "") ? headline.url : "";
-            if (heading !== "" && paragraph !== "") {
-              headlinesBlurbs += "<li lang=\"" + lang + "\">" +
-                                    "<article class=\"blurb-landscape\">" +
-                                      "<div class=\"blurb-content\">" +
-                                        renderImg(src, alt) +
-                                        renderText(heading, paragraph) +
-                                        renderLink(link, lang, heading, 'inside') +
-                                        renderFadin() +
-                                      "</div>" +
-                                    renderLink(link, lang, heading, 'outside') +
-                                    "</article>" +
-                                  "</li>";
-            }
-          });
-        } else {
-          headlinesBlurbs = "<li>Headings could not be loaded. Please try again by reloading the page. If the problem persists, call our support.</li>";
-        }
-        $("#headlines").append(headlinesBlurbs);
-      });
-      </script>
-      <noscript>
-        You need to enable javascript in your web browser in order to see this content.
-      </noscript>
+      <ul id="headlines-list" class="media-list"></ul>
     </section>
-    <section>
+    <section id="articles" style="display: none;">
       <h2>Articles</h2>
-      <ul id="articles" class="media-list"></ul>
-      <script>
-      $(document).ready(function() {
-        let articleBlurbs = "<li></li>";
-        if (articles !== undefined && articles.length > 0) {
-          articles.forEach(function(article, index) {
-            let lang = (article.langCode !== undefined || article.langCode !== "") ? article.langCode : "en";
-            let src = (article.imageUrl !== undefined || article.imageUrl !== "") ? article.imageUrl : "./img/image-not-found.png";
-            let alt = (article.imageAlt !== undefined || article.imageAlt !== "") ? article.imageAlt : "No image description available";
-            let heading = (article.title !== undefined || article.title !== "") ? article.title : "";
-            let paragraph = (article.text !== undefined || article.text !== "") ? article.text : "";
-            let link = (article.url !== undefined || article.url !== "") ? article.url : "";
-            if (heading !== "" && paragraph !== "") {
-              //articleBlurbs += (index%3 === 0) ? "<div class=\"row\">" : "";
-              articleBlurbs += (index === 0) ?  "<div class=\"row\">" : "";
-              articleBlurbs += "<li lang=\"" + lang + "\" class=\"col-sm-6 col-md-4\">" +
-                            "<article class=\"blurb-portrait\">" +
-                              "<div class=\"blurb-content\">" +
-                                renderImg(src, alt) +
-                                renderText(heading, paragraph) +
-                                renderFadin() +
-                              "</div>" +
-                              renderLink(link, lang, heading, 'outside') +
-                            "</article>" +
-                          "</li>";
-              //articleBlurbs += (index%3 === 2) ? "</div>" : "";
-              articleBlurbs += (index === articles.length-1) ? "</div>" : "";
-            }
-          });
-        } else {
-          articleBlurbs = "<li>Articles could not be loaded. Please try again by reloading the page. If the problem persists, call our support.</li>";
-        }
-        $("#articles").append(articleBlurbs);
-      });
-      </script>
-      <noscript>
-        You need to enable javascript in your web browser in order to see this content.
-      </noscript>
+      <ul id="articles-list" class="media-list"></ul>
     </section>
   </main>
   <footer>
@@ -176,8 +108,9 @@
     </div>
   </footer>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="./js/bootstrap/bootstrap.min.js"></script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="./js/renderPage.js"></script>
 </body>
 </html>

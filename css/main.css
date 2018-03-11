@@ -4,6 +4,10 @@ body.spider-monkeys-theme {
   background-color: #EBF1F5;
 }
 
+main {
+    padding-top: 15px;
+}
+
 h1.logotype {
   background-image: url('../img/ateles_logotype_mobile.svg');
   background-repeat: no-repeat;
