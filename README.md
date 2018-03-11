@@ -1,7 +1,5 @@
 # Spider monkeys
-Arbetsprov
-
-<a href="https://chevrons.github.io/spider-monkeys/" target="_blank">Se resultatet här (öppnas i ny flik)</a>
+Arbetsprov (se resultatet här](https://chevrons.github.io/spider-monkeys/))
 
 
 ## Om utvecklaren
