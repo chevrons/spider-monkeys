@@ -128,11 +128,6 @@ footer a {
     background-color: #fff;
   }
 
-  .blurb-landscape .blurb-content {
-      height: 100%;
-      overflow: auto;
-  }
-
   .blurb-landscape .blurb-image {
     float: left;
     width: 40%;

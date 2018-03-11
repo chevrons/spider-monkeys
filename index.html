@@ -16,6 +16,7 @@
   <script src="./js/jquery-3.3.1.min.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/translations.js"></script>
+  <script src="./js/renderPage.js" defer="defer"></script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -61,8 +62,10 @@
     </div>
   </header>
   <main class="container">
-    <div id="errorMessages" class="alert alert-danger">
-      <noscript>You need to enable javascript in your web browser in order to see this content.</noscript>
+    <div  role="alert">
+      <div id="errorMessages" class="alert alert-danger">
+        <noscript>You need to enable javascript in your web browser in order to see this content.</noscript>
+      </div>
     </div>
     <section id="headlines" style="display: none;">
       <h2>Headlines</h2>
@@ -111,6 +114,5 @@
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="./bootstrap/js/bootstrap.min.js"></script>
-  <script src="./js/renderPage.js"></script>
 </body>
 </html>

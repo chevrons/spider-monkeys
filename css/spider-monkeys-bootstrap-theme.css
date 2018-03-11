@@ -27,3 +27,11 @@ html {
 .spider-monkeys-theme .navbar-collapse {
   padding: 0;
 }
+
+.spider-monkeys-theme .nav > li > a:focus,
+.spider-monkeys-theme .nav > li > a:hover {
+  background-color: #fff;
+  border-radius: 0;
+  color: #0475D7;
+  text-decoration: none;
+}
