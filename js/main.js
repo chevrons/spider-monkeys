@@ -1,10 +1,16 @@
 let headlines;
 let articles;
+let errors = [];
 
 function loadData() {
-	let mydata = JSON.parse(data);
-	headlines = mydata[0].headlines;
-	articles = mydata[0].articles;
+	try {
+		let mydata = JSON.parse(data);
+		headlines = mydata[0].headlines;
+		articles = mydata[0].articles;
+	} catch(err){
+		console.error(err);
+		errors.push("<span class=\"glyphicon glyphicon-alert\" aria-hidden=\"true\"></span> The content on this page could not be shown. Try to reload the page. If the error persists, contact us.");
+	}
 }
 
 function renderImg(url, alt) {

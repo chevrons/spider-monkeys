@@ -9,7 +9,7 @@ Webbutvecklare som brinner för tillgänglighet.
 ### Must-have
 * HTML5 solution according to given designs &check;
 * Hard coded news data &check;
-* Reusable modules/elements using DRY (&check;)
+* Reusable modules/elements using DRY &check;
 * Semantic HTML(5) & CSS(3)  &check;
 * Responsive:
 * * when minimizing the browser window, there's a moment where the width of the browser is under the breakpoint for x-small devices but the image is not large enough to fill out the width, so there's a white pane to the right of the image.
@@ -19,8 +19,9 @@ Webbutvecklare som brinner för tillgänglighet.
 
 ### Nice-to-have
 * Loading data from json-file  &check;
-* Possibility to have 0-N headlines and articles
-* Making the site independent och the json structure (new elements or removing some)
+* Possibility to have 0-N headlines and articles &check;
+* Making the site independent of the json structure (new elements or removing some) &cross;
+  * No error handling of corrupt image sources
 
 ### Rules
 * Make smart decisions about the json objects and UI elements
