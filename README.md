@@ -64,14 +64,7 @@ För att användare med synnedsättning ska kunna få informationen uppläst kor
 #### Versaler
 Länkarna i toppmenyn är ändrade från versaler till gemener för att öka läsbarheten.
 
-### Övrigt
-#### Rubriker saknades
-Artiklarna i json-filen saknade rubriker, så jag googlade på texten för att få fram rubriker, som jag lade till i json-datat.
-
-#### Texten "Om oss"
-Jag ändrade texten under "About us" i sidfoten för jag tyckte den som fanns i skissen var lite tråkig.
-
-#### Färgkontraster
+#### Färger
 Jag mörkade rubrikernas samt sidhuvudet och sidfotens färger för att möta upp tillgänglighetskraven på kontraster (WCAG 2.0 AA).
 
 Jag lät brödtexterna i puffarna vara svarta för bättre läsbarhet. Här var jag inte helt säker på att textfärgen ingick i designen eller bara skulle ses som en "mall".
@@ -79,4 +72,12 @@ Jag lät brödtexterna i puffarna vara svarta för bättre läsbarhet. Här var 
 #### Länkar
 Gjorde länkarna understrukna för att även färgblinda ska kunna se att det är klickbar text. Speciellt nu när de har samma färg som rubrikerna.
 
-Försökte även skriva tydligare länkar: https://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-refs
+Försökte skriva tydligare länkar.
+(se https://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-refs)
+
+### Övrigt
+#### Rubriker saknades
+Artiklarna i json-filen saknade rubriker, så jag googlade på texten för att få fram rubriker, som jag lade till i json-datat.
+
+#### Texten "Om oss"
+Jag ändrade texten under "About us" i sidfoten för jag tyckte den som fanns i skissen var lite tråkig.
