@@ -77,3 +77,4 @@ Försökte även skriva tydligare länkar: https://www.w3.org/TR/2008/REC-WCAG20
 Förbättringar som hade kunnat göras om mer tid funnits:
 * Bättre bildhantering (skalning och beskärning så tumnaglarna var små och snabba att ladda)
 * Lazy-loading av bilderna
+* Asynkron hantering med AJAX
